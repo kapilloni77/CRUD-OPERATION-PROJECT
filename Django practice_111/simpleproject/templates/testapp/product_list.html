@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      h1{
+        text-transform:capitalize;
+        color:green;
+        background-color:red;
+        text-align: center;
+        margin-bottom:3px;
+        margin-top:0px;
+      }
+      #an{
+        font-size:30px;
+        text-decoration:none;
+        color:black;
+        font-style:normal;
+      }
+      .nm{
+        text-decoration:none;
+        color:white;
+        background-color:blue;
+        padding:5px;
+        border:1px solid black;
+        font-size:17px;
+        border-radius:5px;
+      }
+      body{
+          font-family: "Roboto", sans-serif;
+           background:linear-gradient(to right, #00feba, #5b548a);
+      }
+      hr{
+        line-height:1px;
+        background-color:gray;
+      }
+      marquee{
+        font-size:19px;
+      }
+    </style>
+  </head>
+  <body>
+     <h1>List of all product</h1>
+      <marquee behavior="scroll" direction="right" scrollamount="10px">Please click here to all product</marquee>
+     <hr>
+     <ul>
+       {%for product in product_list%}
+       <li><a href="/detail/{{product.id}}" id="an">{{product.pname|title}}</a></li>
+       {%endfor%}
+       <h5><a href="/create" class="nm">create product</a></h5>
+       <a href="/" class="nm">Home Page</a>
+     </ul>
+  </body>
+</html>
